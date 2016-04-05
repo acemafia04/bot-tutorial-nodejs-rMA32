@@ -46,7 +46,7 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/SRMFL/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/xm16/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
