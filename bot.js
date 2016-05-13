@@ -5,10 +5,13 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexDL = /^\/DEPTH/i;botRegexRules = /^\/rules/; botRegexSC = /^\/SCHED/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexP = /^\/PLAYER/i;  botRegexTw = /^\/twitch/i; botRegexWk = /^\/users/; botRegexHp = /^\/help/; botRegexFD = /^\/4th/; botRegexDC = /^\/dc/; botRegexSCORE = /^\/scoring/; botRegexFM = /^\/forum/; botRegexAP = /^\/ap/; botRegexFA = /^\/fa/;
+      botRegex = /^\/cool guy/; botRegexDL = /^\/DEPTH/i;botRegexRules = /^\/rules/; botRegexSC = /^\/SCHED/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botRegexP = /^\/PLAYER/i;  botRegexTw = /^\/twitch/i; botRegexWk = /^\/users/; botRegexHp = /^\/help/; botRegexFD = /^\/4th/; botRegexDC = /^\/dc/; botRegexSCORE = /^\/scoring/; botRegexFM = /^\/forum/; botRegexAP = /^\/ap/; botRegexFA = /^\/fa/; 
+botRegexOL = /^\/RFA/i;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
+  var RFAS =
+["Chester", "Childs", "Austin", "Perry", "Warford", "Eubanks", "Hudson", "Hennings", "Scott", "Vernon", "Murray", "Mason", "Woodson", "Osemele", "Benson", "Williams", "Smith", "Wilson", "Roland", "Guy", "Cross", "Davis", "Brown", "Hill", "Carter", "Woods", "Mcdonald", "Milton", "Hayward", "Toliver", "Mason", "Crawford", "Zuerlein", "Green", "Locke", "Summers", "Hocker", "Howell", "Avery", "Farrell", "Fuller", "Peterson", "James", "Walden", "Foreman", "Thomas", "Gaitor", "Kline", "Williams", "Austin", "Dawkins", "Smith", "Clark", "Hunter", "Jordan", "Compton", "Oliver", "Nicholas", "Fragel"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -49,7 +52,7 @@ function respond() {
   }
 else if(request.text && botRegexHp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Commands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list");
+    postMessage("Commands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list\nrfa *Name* (use uppercase first letter) for RFAs");
     this.res.end();
   }
 else if(request.text && botRegexFD.test(request.text)) {
@@ -85,6 +88,29 @@ else if(request.text && botRegexFA.test(request.text)) {
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
     postMessage("OBJ*");
+    this.res.end();
+  }
+  else if(request.text && botRegexOL.test(request.text)) {
+    this.res.writeHead(200);
+   var hit;
+   var num_hits = 0;
+   var count = 0;
+   var req = request.text.substring(5,request.text.length);
+    //postMessage("RFAs: " + RFAS.length);
+    for (count = 0; count < RFAS.length; count++) {
+	hit = req.match(RFAS[count]);
+	if (hit != null){
+		num_hits++;
+		postMessage("Player is taken");		
+		postMessage("http://daddyleagues.com/xm16/forum/post/130469");
+	}
+    }
+	if (num_hits == 0){
+		postMessage("Player is not on the list");
+	}
+	//postMessage("Count: " + count);
+	//postMessage(hit);
+    
     this.res.end();
   }
   
