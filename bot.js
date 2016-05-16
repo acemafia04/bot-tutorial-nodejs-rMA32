@@ -23,6 +23,7 @@ function respond() {
     botRegexOL = /^\/RFA/i;
     botRegexST = /^\/standings/;
     botRegexTN = /^\/teams/;
+    botRegexWV = /^\/waivers/;
 
     var teamAb = ["NE", "NO", "ARI", "PHI", "CLE", "TEN", "OAK", "DAL", "IND", "SEA", "CIN", "PIT", "JAC", "BAL", "SD", "DEN", "MIN", "ATL", "KC", "NYG", "GB", "DET", "HOU", "STL", "CHI", "CAR",
         "MIA", "BUF", "SF", "WAS", "NYJ", "TB"];
@@ -120,6 +121,11 @@ function respond() {
     } else if (request.text && botRegexTN.test(request.text)) {
         this.res.writeHead(200);
         postMessage("buf Buffalo Bills\nmia Miami Dolphins\nne New England Patriots\nnyj New York Jets\nbal Baltimore Ravens \ncin Mexico City Golden Eagles\ncle Cleveland Browns\npit Pittsburgh Steelers\nhou Houston Texans\nind Indianapolis Colts\njac Jacksonville Jaguars\ten Tennessee Titans\nden Denver Broncos\nkc Kansas City Chiefs \noak Oakland Raiders\nsd San Diego Chargers\ndal Dallas Cowboys\nnyg NY Giants\nphi Philadelphia Eagles\nwas Washington Redskins\nchi Chicago Bears\ndet Detroit Lions\ngb Green Bay Packers\nmin San Antonio Dreadnoughts\natl Los Angeles Crusaders \ncar Carolina Panthers\nno New Orleans Saints\ntb Tampa Bay Buccaneers\nari Arizona Cardinals\nstl St. Louis Rams\nsf San Francisco 49ers\nsea Seattle Seahawks");
+        this.res.end();
+    } else if (request.text && botRegexWV.test(request.text)) {
+        this.res.writeHead(200);
+        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1xZ5YDXALdGWqT5I2GkYCw6VYbozVinUNwmCqIp-59FI/edit#gid=0");
+        postMessage("Free agents:\nhttp://daddyleagues.com/xm16/players?name=&position=all&team=fa");
         this.res.end();
     } else {
         console.log("don't care");
