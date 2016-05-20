@@ -20,10 +20,11 @@ function respond() {
     botRegexFM = /^\/forum/;
     botRegexAP = /^\/ap/;
     botRegexFA = /^\/fa/;
-    botRegexOL = /^\/RFA/i;
+//    botRegexOL = /^\/RFA/i;
     botRegexST = /^\/standings/;
     botRegexTN = /^\/teams/;
-    botRegexWV = /^\/waivers/;
+//    botRegexWV = /^\/waivers/;
+    botRegexBL = /^\/block/;
 
     var teamAb = ["NE", "NO", "ARI", "PHI", "CLE", "TEN", "OAK", "DAL", "IND", "SEA", "CIN", "PIT", "JAC", "BAL", "SD", "DEN", "MIN", "ATL", "KC", "NYG", "GB", "DET", "HOU", "STL", "CHI", "CAR",
         "MIA", "BUF", "SF", "WAS", "NYJ", "TB"];
@@ -62,7 +63,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexHp.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("bzzt BB-8 v1.5\nCommands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nrfa *Name* (use uppercase first letter) for RFAs");
+        postMessage("bzzt BB-8 v1.5\nCommands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nblock for trade block listings");
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
@@ -82,7 +83,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexFM.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/rules/");
+        postMessage("http://daddyleagues.com/xm16/forum/");
         this.res.end();
     } else if (request.text && botRegexFA.test(request.text)) {
         this.res.writeHead(200);
@@ -92,29 +93,31 @@ function respond() {
         this.res.writeHead(200);
         postMessage("OBJ*");
         this.res.end();
-    } else if (request.text && botRegexOL.test(request.text)) {
-        this.res.writeHead(200);
-        var hit;
-        var num_hits = 0;
-        var count = 0;
-        var req = request.text.substring(5, request.text.length);
-        //postMessage("RFAs: " + RFAS.length);
-        for (count = 0; count < RFAS.length; count++) {
-            hit = req.match(RFAS[count]);
-            if (hit != null) {
-                num_hits++;
-                postMessage("Player is taken");
-                postMessage("http://daddyleagues.com/xm16/forum/post/130469");
-            }
-        }
-        if (num_hits == 0) {
-            postMessage("Player is not on the list");
-        }
-        //postMessage("Count: " + count);
-        //postMessage(hit);
-
-        this.res.end();
-    } else if (request.text && botRegexST.test(request.text)) {
+    } 
+//    else if (request.text && botRegexOL.test(request.text)) {
+//        this.res.writeHead(200);
+//        var hit;
+//        var num_hits = 0;
+//        var count = 0;
+//        var req = request.text.substring(5, request.text.length);
+//        //postMessage("RFAs: " + RFAS.length);
+//        for (count = 0; count < RFAS.length; count++) {
+//            hit = req.match(RFAS[count]);
+//            if (hit != null) {
+//                num_hits++;
+//                postMessage("Player is taken");
+//                postMessage("http://daddyleagues.com/xm16/forum/post/130469");
+//            }
+//        }
+//        if (num_hits == 0) {
+//            postMessage("Player is not on the list");
+//        }
+//        //postMessage("Count: " + count);
+//        //postMessage(hit);
+//
+//        this.res.end();
+//    } 
+    else if (request.text && botRegexST.test(request.text)) {
         this.res.writeHead(200);
         postMessage("http://daddyleagues.com/xm16/standings/conference");
         this.res.end();
@@ -122,10 +125,14 @@ function respond() {
         this.res.writeHead(200);
         postMessage("buf Buffalo Bills\nmia Miami Dolphins\nne New England Patriots\nnyj New York Jets\nbal Baltimore Ravens \ncin Mexico City Golden Eagles\ncle Cleveland Browns\npit Pittsburgh Steelers\nhou Houston Texans\nind Indianapolis Colts\njac Jacksonville Jaguars\ten Tennessee Titans\nden Denver Broncos\nkc Kansas City Chiefs \noak Oakland Raiders\nsd San Diego Chargers\ndal Dallas Cowboys\nnyg NY Giants\nphi Philadelphia Eagles\nwas Washington Redskins\nchi Chicago Bears\ndet Detroit Lions\ngb Green Bay Packers\nmin San Antonio Dreadnoughts\natl Los Angeles Crusaders \ncar Carolina Panthers\nno New Orleans Saints\ntb Tampa Bay Buccaneers\nari Arizona Cardinals\nstl St. Louis Rams\nsf San Francisco 49ers\nsea Seattle Seahawks");
         this.res.end();
-    } else if (request.text && botRegexWV.test(request.text)) {
+    } //else if (request.text && botRegexWV.test(request.text)) {
+//        this.res.writeHead(200);
+//        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1xZ5YDXALdGWqT5I2GkYCw6VYbozVinUNwmCqIp-59FI/edit#gid=0");
+//        postMessage("Free agents:\nhttp://daddyleagues.com/xm16/players?name=&position=all&team=fa");
+//        this.res.end();} 
+        else if (request.text && botRegexBL.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1xZ5YDXALdGWqT5I2GkYCw6VYbozVinUNwmCqIp-59FI/edit#gid=0");
-        postMessage("Free agents:\nhttp://daddyleagues.com/xm16/players?name=&position=all&team=fa");
+        postMessage("http://daddyleagues.com/xm16/forum/forum/4748");
         this.res.end();
     } else {
         console.log("don't care");
