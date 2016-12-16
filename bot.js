@@ -71,15 +71,15 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexDC.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://mtftestconcept.info/XM_img/DC.png");
+        postMessage("Disconnects\nIn the event of a disconnect, confer with your opponent the best course of action to replay the game. If the game was still in a competitive state, confer with your opponent and decide how to proceed. Typically, the team with the lead will decide whether to restart the game from the beginning, or to the same score and time. If the game was decided and close to being completed, the team with the lead may receive a sim-a-win.");
         this.res.end();
     } else if (request.text && botRegexSCORE.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://mtftestconcept.info/XM_img/scoring.png");
+        postMessage("Scoring caps\nIf losing team has less than 21 points, winning team score cap is 49.\nIf losing team has 21-35 points, winning team score cap is 56.\nIf both teams have scored 35+ points, play to seal a victory within sportsmanship rules.\nDo not run up the score when you have an opportunity to end the game.\nDo not pad your stats, this will open you up to scrutiny and eventual benching of that player. Spread playing time around on both sides of the ball, and mix up who you user or attack with. Do not shatter records left and right and whore for XP for players. (Example: 200+ yards rushing, receiving, 8+ sacks, several record breaking stats within a few weeks).\n4 TDs (per player, per game) is acceptable, 5 TDs in a blow out will be reviewed, 6 TDs in a blow out will result in an automatic suspension\nStreaming and archiving your games will help you remain transparent in case any issues arise. The tape never lies!");
         this.res.end();
     } else if (request.text && botRegexAP.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://mtftestconcept.info/XM_img/Scheduling.png");
+        postMessage("SCHEDULING\nScheduling with your opponents is required for each week. When scheduling your games, present both the window of times you can and cannot play. Once you’ve agreed on a time, it’s a commitment that each person must honor.\nLimited availability to play\nIf you have a small daytime window to play your opponent, notify them immediately. If an honest effort was given to accommodate the opponent with a small window, and no scheduled time could be reached, AP may be given at the Button Pusher’s discretion. Chief BP has final discretion. All decisions are final, and are not open to debate.\nMissing a scheduled game\nIf one opponent cannot make their scheduled time for any reason, they may force win, reschedule, or play CPU.\nPlaying the CPU\nIf your opponent is away, unresponsive for over 24 hours, and no game is scheduled, the CPU may be played twice and/or simmed.\nSimulating a match\nOpposite windows of availability will result in a sim.");
         this.res.end();
     } else if (request.text && botRegexFM.test(request.text)) {
         this.res.writeHead(200);
