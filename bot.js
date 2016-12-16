@@ -37,21 +37,21 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexDL.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/team/" + request.text.substring(7, 10) + "/depthchart");
+        postMessage("http://daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/depthchart");
         this.res.end();
     } else if (request.text && botRegexRules.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/rules/");
+        postMessage("http://daddyleagues.com/xm/rules/");
         this.res.end();
     } else if (request.text && botRegexSC.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/team/" + request.text.substring(7, 10) + "/schedule");
+        postMessage("http://daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/schedule");
         this.res.end();
     } else if (request.text && botRegexP.test(request.text)) {
         this.res.writeHead(200);
         var req = request.text.substring(8, request.text.length);
         var rep = req.replace(/ /, "+");
-        postMessage("http://daddyleagues.com/xm16/players?name=" + rep + "&position=all&team=all");
+        postMessage("http://daddyleagues.com/xm/players?name=" + rep + "&position=all&team=all");
         this.res.end();
     } else if (request.text && botRegexTw.test(request.text)) {
         this.res.writeHead(200);
@@ -83,11 +83,11 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexFM.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/forum/");
+        postMessage("http://daddyleagues.com/xm/forum/");
         this.res.end();
     } else if (request.text && botRegexFA.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/players?name=&position=all&team=fa");
+        postMessage("http://daddyleagues.com/xm/players?name=&position=all&team=fa");
         this.res.end();
     } else if (request.text && botODB.test(request.text)) {
         this.res.writeHead(200);
@@ -106,7 +106,7 @@ function respond() {
 //            if (hit != null) {
 //                num_hits++;
 //                postMessage("Player is taken");
-//                postMessage("http://daddyleagues.com/xm16/forum/post/130469");
+//                postMessage("http://daddyleagues.com/xm/forum/post/130469");
 //            }
 //        }
 //        if (num_hits == 0) {
@@ -119,7 +119,7 @@ function respond() {
 //    } 
     else if (request.text && botRegexST.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/standings/conference");
+        postMessage("http://daddyleagues.com/xm/standings/conference");
         this.res.end();
     } else if (request.text && botRegexTN.test(request.text)) {
         this.res.writeHead(200);
@@ -128,11 +128,11 @@ function respond() {
     } //else if (request.text && botRegexWV.test(request.text)) {
 //        this.res.writeHead(200);
 //        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1xZ5YDXALdGWqT5I2GkYCw6VYbozVinUNwmCqIp-59FI/edit#gid=0");
-//        postMessage("Free agents:\nhttp://daddyleagues.com/xm16/players?name=&position=all&team=fa");
+//        postMessage("Free agents:\nhttp://daddyleagues.com/xm/players?name=&position=all&team=fa");
 //        this.res.end();} 
         else if (request.text && botRegexBL.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm16/forum/forum/4748");
+        postMessage("http://daddyleagues.com/xm/forum/forum/4748");
         this.res.end();
     } else {
         console.log("don't care");
