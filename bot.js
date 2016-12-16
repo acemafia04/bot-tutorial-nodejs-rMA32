@@ -59,7 +59,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexWk.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("https://docs.google.com/spreadsheets/d/1q9JDH4RF95qi2b2fWRNGVjWYOMwQgxl819o1Oi05-Jw/edit#gid=0");
+        postMessage("https://docs.google.com/spreadsheets/d/1BXQQfjdVwqR51ZjahQzGvVNtZgc4UgbZ1nVVnFLEAsk/edit#gid=0");
         this.res.end();
     } else if (request.text && botRegexHp.test(request.text)) {
         this.res.writeHead(200);
@@ -67,7 +67,12 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://mtftestconcept.info/XM_img/fourth.png");
+        postMessage("4th down protocol
+Losing/tied teams must be on the opponent’s side of the 50, unless under 2:00 minute warning
+Freely go for it if down 21+ points at any point in the game
+Winning team may only go for it on 4th and 10 or less to end the game in the very next series of downs
+Goal line offense/defense within 5 yards is allowed
+Check in with your opponent before going for it. 4th down attempts are situational and risky. Factor in field goal range, opposing wind, and time on the clock.");
         this.res.end();
     } else if (request.text && botRegexDC.test(request.text)) {
         this.res.writeHead(200);
