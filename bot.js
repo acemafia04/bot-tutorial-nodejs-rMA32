@@ -20,6 +20,7 @@ function respond() {
     botRegexFM = /^\/forum/;
     botRegexAP = /^\/ap/;
     botRegexFA = /^\/fa/;
+    botRegexFA = /^\/guide/;
 //    botRegexOL = /^\/RFA/i;
     botRegexST = /^\/standings/;
     botRegexTN = /^\/teams/;
@@ -80,6 +81,10 @@ function respond() {
     } else if (request.text && botRegexAP.test(request.text)) {
         this.res.writeHead(200);
         postMessage("Scheduling with your opponents is required for each week. When scheduling your games, present both the window of times you can and cannot play. Once you’ve agreed on a time, it’s a commitment that each person must honor.\nLimited availability to play: If you have a small daytime window to play your opponent, notify them immediately. If an honest effort was given to accommodate the opponent with a small window, and no scheduled time could be reached, AP may be given at the Button Pusher’s discretion. Chief BP has final discretion. All decisions are final, and are not open to debate.\nMissing a scheduled game: If one opponent cannot make their scheduled time for any reason, they may force win, reschedule, or play CPU.\nPlaying the CPU: If your opponent is away, unresponsive for over 24 hours, and no game is scheduled, the CPU may be played twice and/or simmed.\nSimulating a match: Opposite windows of availability will result in a sim.");
+        this.res.end();
+    } else if (request.text && botRegexGuide.test(request.text)) {
+        this.res.writeHead(200);
+        postMessage("https://owncloud.kensycloud.com/owncloud/s/0LikzLl2pJhvK8f");
         this.res.end();
     } else if (request.text && botRegexFM.test(request.text)) {
         this.res.writeHead(200);
