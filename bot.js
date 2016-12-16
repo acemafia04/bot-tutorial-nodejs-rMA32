@@ -63,11 +63,11 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexHp.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("bzzt BB-8 v1.5\nCommands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nblock for trade block listings");
+        postMessage("bzzt BB-8 v2.0\nCommands:\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling rules\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nblock for trade block listings");
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("4th down protocol\nLosing/tied teams must be on the opponent’s side of the 50, unless under 2:00 minute warning\nFreely go for it if down 21+ points at any point in the game\nWinning team may only go for it on 4th and 10 or less to end the game in the very next series of downs\nGoal line offense/defense within 5 yards is allowed\nCheck in with your opponent before going for it. 4th down attempts are situational and risky. Factor in field goal range, opposing wind, and time on the clock.");
+        postMessage("4th down protocol\n• Losing/tied teams must be on the opponent’s side of the 50, unless under 2:00 minute warning\n• Freely go for it if down 21+ points at any point in the game\n• Winning team may only go for it on 4th and 10 or less to end the game in the very next series of downs\n• Goal line offense/defense within 5 yards is allowed\n• Check in with your opponent before going for it. 4th down attempts are situational and risky. Factor in field goal range, opposing wind, and time on the clock.");
         this.res.end();
     } else if (request.text && botRegexDC.test(request.text)) {
         this.res.writeHead(200);
@@ -79,7 +79,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexAP.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("SCHEDULING\nScheduling with your opponents is required for each week. When scheduling your games, present both the window of times you can and cannot play. Once you’ve agreed on a time, it’s a commitment that each person must honor.\nLimited availability to play\nIf you have a small daytime window to play your opponent, notify them immediately. If an honest effort was given to accommodate the opponent with a small window, and no scheduled time could be reached, AP may be given at the Button Pusher’s discretion. Chief BP has final discretion. All decisions are final, and are not open to debate.\nMissing a scheduled game\nIf one opponent cannot make their scheduled time for any reason, they may force win, reschedule, or play CPU.\nPlaying the CPU\nIf your opponent is away, unresponsive for over 24 hours, and no game is scheduled, the CPU may be played twice and/or simmed.\nSimulating a match\nOpposite windows of availability will result in a sim.");
+        postMessage("Scheduling with your opponents is required for each week. When scheduling your games, present both the window of times you can and cannot play. Once you’ve agreed on a time, it’s a commitment that each person must honor.\nLimited availability to play: If you have a small daytime window to play your opponent, notify them immediately. If an honest effort was given to accommodate the opponent with a small window, and no scheduled time could be reached, AP may be given at the Button Pusher’s discretion. Chief BP has final discretion. All decisions are final, and are not open to debate.\nMissing a scheduled game: If one opponent cannot make their scheduled time for any reason, they may force win, reschedule, or play CPU.\nPlaying the CPU: If your opponent is away, unresponsive for over 24 hours, and no game is scheduled, the CPU may be played twice and/or simmed.\nSimulating a match: Opposite windows of availability will result in a sim.");
         this.res.end();
     } else if (request.text && botRegexFM.test(request.text)) {
         this.res.writeHead(200);
@@ -127,7 +127,7 @@ function respond() {
         this.res.end();
     } //else if (request.text && botRegexWV.test(request.text)) {
 //        this.res.writeHead(200);
-//        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1xZ5YDXALdGWqT5I2GkYCw6VYbozVinUNwmCqIp-59FI/edit#gid=0");
+//        postMessage("Waiver List:\nhttps://docs.google.com/spreadsheets/d/1BXQQfjdVwqR51ZjahQzGvVNtZgc4UgbZ1nVVnFLEAsk/edit#gid=1504025007");
 //        postMessage("Free agents:\nhttp://daddyleagues.com/xm/players?name=&position=all&team=fa");
 //        this.res.end();} 
         else if (request.text && botRegexBL.test(request.text)) {
