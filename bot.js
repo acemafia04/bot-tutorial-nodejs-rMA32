@@ -67,7 +67,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://mtftestconcept.info/XM_img/fourth.png");
+        postMessage("4th down protocol\nLosing/tied teams must be on the opponent’s side of the 50, unless under 2:00 minute warning\nFreely go for it if down 21+ points at any point in the game\nWinning team may only go for it on 4th and 10 or less to end the game in the very next series of downs\nGoal line offense/defense within 5 yards is allowed\nCheck in with your opponent before going for it. 4th down attempts are situational and risky. Factor in field goal range, opposing wind, and time on the clock.");
         this.res.end();
     } else if (request.text && botRegexDC.test(request.text)) {
         this.res.writeHead(200);
