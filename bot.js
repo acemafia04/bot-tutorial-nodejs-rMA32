@@ -64,7 +64,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexHp.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("bzzt BB-8 v2.0\nCommands:\nguide link to XM Member Guide\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling protocol\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nblock for trade block listings”);
+        postMessage("bzzt BB-8 v2.0\nCommands:\nguide\ndepth *team* for depth chart\nsched *team* for schedule\nplayer *name* for player\ntwitch *twitch_ID* for twitch link\nforum\n4th for 4th down rules\ndc for disconnect rules\nscoring for scoring rules\nap for scheduling protocol\nfa for free agents\nusers for user list\nteams for team abbreviatons\nstandings for conference standings\nblock for trade block listings”);
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
