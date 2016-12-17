@@ -137,7 +137,7 @@ function respond() {
 //        this.res.end();} 
         else if (request.text && botRegexBL.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://daddyleagues.com/xm/forum/forum/4748");
+        postMessage("http://daddyleagues.com/xm/forum/forum/6532");
         this.res.end();
     } else {
         console.log("don't care");
