@@ -68,7 +68,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexFD.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("4th down protocol\n• Losing/tied teams must be on the opponent’s side of the 50, unless under 2:00 minute warning\n• Freely go for it if down 21+ points at any point in the game\n• Winning team may only go for it on 4th and 10 or less to end the game in the very next series of downs\n• Goal line offense/defense within 5 yards is allowed\n• Check in with your opponent before going for it. 4th down attempts are situational and risky. Factor in field goal range, opposing wind, and time on the clock.");
+        postMessage("4th down protocol\n• Between the 20s\n• Losing/tied teams must be on the 50+ yard line with 4th and 2 or less\n• Losing/tied teams may go for it freely under 2 minute warning\n• Losing teams may go for it if down by 21+ points\n• Winning teams may go for it to end the half as time expires\n• Winning teams may go for it on 4th and 10 or less to end the game in the very next kneel-down series\n4th down inside the 20 (redzone)\n• Losing/tied teams may go for it on 4th and 1 or less\n• • Losing/tied teams may go for it on 4th and goal from the 5 yard line\n• Losing/tied teams may go for it freely under 2 minute warning\n• Losing teams may go for it if down by 21+ points\n• Winning teams may go for it on 4th and goal from the 5 yard line if up by 3 points or less\n 4th down in overtime\n• Tied teams may freely go for it on their own 40+ yard line\n• Losing teams may freely go for 4th down from anywhere;
         this.res.end();
     } else if (request.text && botRegexDC.test(request.text)) {
         this.res.writeHead(200);
