@@ -28,7 +28,7 @@ function respond() {
     botRegexBL = /^\/block/;
 
     var teamAb = ["NE", "NO", "ARI", "PHI", "CLE", "TEN", "OAK", "DAL", "IND", "SEA", "CIN", "PIT", "JAC", "BAL", "SD", "DEN", "MIN", "ATL", "KC", "NYG", "GB", "DET", "HOU", "STL", "CHI", "CAR",
-        "MIA", "BUF", "SF", "WAS", "NYJ", "TB"];
+        "MIA", "BUF", "SF", "WAS", "NYJ", "TB", "BKN"];
 
     var RFAS = ["Chester", "Childs", "Austin", "Perry", "Warford", "Eubanks", "Hudson", "Hennings", "Scott", "Vernon", "Murray", "Mason", "Woodson", "Osemele", "Benson", "Williams", "Smith", "Wilson", "Roland", "Guy", "Cross", "Davis", "Brown", "Hill", "Carter", "Woods", "Mcdonald", "Milton", "Hayward", "Toliver", "Mason", "Crawford", "Zuerlein", "Green", "Locke", "Summers", "Hocker", "Howell", "Avery", "Farrell", "Fuller", "Peterson", "James", "Walden", "Foreman", "Thomas", "Gaitor", "Kline", "Williams", "Austin", "Dawkins", "Smith", "Clark", "Hunter", "Jordan", "Compton", "Oliver", "Nicholas", "Fragel", "Bishop", "Perriman", "Bryan", "Mager", "Verrett", "Austin", "Collins", "Dent", "Spence", "Freeman", "Cockrell", "Colvin", "Breeland", "Brown", "Vereen", "Massie", "Allen", "Mayowa", "Niklas", "Adams"];
 
