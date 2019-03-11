@@ -128,7 +128,7 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexTN.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("buf Buffalo Bills\nmia Miami Dolphins\nne New England Patriots\nnyj New York Jets\nbal Baltimore Ravens \ncin Cincinnati Bengals\ncle Cleveland Browns\npit Pittsburgh Steelers\nhou Houston Texans\nind Indianapolis Colts\njac Jacksonville Jaguars\nten Tennessee Titans\nden Denver Broncos\nkc Kansas City Chiefs\noak Oakland Raiders\nsd San Diego Chargers\ndal Dallas Cowboys\nnyg New York Giants\nphi Philadelphia Eagles\nwas Washington Redskins\nchi Chicago Bears\ndet Detroit Lions\ngb Green Bay Packers\nmin Minnesota Vikings\natl Atlanta Falcons\ncar Carolina Panthers\nno New Orleans Saints\ntb Tampa Bay Buccaneers\nari Arizona Cardinals\nla Los Angelos Rams\nsf San Francisco 49ers\nsea Seattle Seahawks");
+        postMessage("buf Buffalo Bills\nmia Miami Dolphins\nne New England Patriots\nnyj New York Jets\nbal Baltimore Ravens \ncin Cincinnati Bengals\ncle Cleveland Browns\npit Pittsburgh Steelers\nhou Houston Texans\nind Indianapolis Colts\njac Jacksonville Jaguars\nten Tennessee Titans\nden Denver Broncos\nkc Kansas City Chiefs\noak Oakland Raiders\nsd San Diego Chargers\ndal Dallas Cowboys\nnyg New York Giants\nphi Philadelphia Eagles\nwas Washington Redskins\nchi Chicago Bears\ndet Detroit Lions\ngb Green Bay Packers\nmin Minnesota Vikings\natl Atlanta Falcons\ncar Carolina Panthers\nno New Orleans Saints\ntb Tampa Bay Buccaneers\nari Arizona Cardinals\nla Los Angelos Rams\nsf San Francisco 49ers\nsea Seattle Seahawks\nBKN Brooklyn Bulls\");
         this.res.end();
     } //else if (request.text && botRegexWV.test(request.text)) {
 //        this.res.writeHead(200);
