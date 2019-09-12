@@ -38,25 +38,25 @@ function respond() {
         this.res.end();
     } else if (request.text && botRegexDL.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://www.daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/depthchart");
+        postMessage("https://www.daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/depthchart");
         this.res.end();
     } else if (request.text && botRegexRules.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://www.daddyleagues.com/xm/rules/");
+        postMessage("https://www.daddyleagues.com/xm/rules/");
         this.res.end();
     } else if (request.text && botRegexSC.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://www.daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/schedule");
+        postMessage("https://www.daddyleagues.com/xm/team/" + request.text.substring(7, 10) + "/schedule");
         this.res.end();
     } else if (request.text && botRegexP.test(request.text)) {
         this.res.writeHead(200);
         var req = request.text.substring(8, request.text.length);
         var rep = req.replace(/ /, "+");
-        postMessage("http://www.daddyleagues.com/xm/players?name=" + rep + "&position=all&team=all");
+        postMessage("https://www.daddyleagues.com/xm/players?name=" + rep + "&position=all&team=all");
         this.res.end();
     } else if (request.text && botRegexTw.test(request.text)) {
         this.res.writeHead(200);
-        postMessage("http://www.twitch.tv/" + request.text.substring(8, request.text.length));
+        postMessage("https://www.twitch.tv/" + request.text.substring(8, request.text.length));
         this.res.end();
     } else if (request.text && botRegexWk.test(request.text)) {
         this.res.writeHead(200);
